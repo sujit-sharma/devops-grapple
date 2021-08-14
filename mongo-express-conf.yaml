@@ -30,5 +30,10 @@ spec:
                 secretKeyRef:
                   name: mongodb-secret
                   key: mongo-root-password
-                  value: DB_URL
+            - name: ME_CONFIG_MONGODB_ADMINPASSWORD
+              valueFrom:
+                configMapKeyRef:
+                  name: mongodb-configmap
+                  key: database_url
+
 
